@@ -19,6 +19,7 @@ screen.onkeypress(player.move_up, 'Up')
 
 game_is_running = True
 while game_is_running:
+    screen.update()
     time.sleep(0.1)
     car_manager.create_car()
     car_manager.move_cars()
@@ -33,7 +34,6 @@ while game_is_running:
         scoreboard.level_up()
         car_manager.level_up()
 
-    screen.update()
-
+    car_manager.remove_cars_past_screen()
 
 screen.exitonclick()

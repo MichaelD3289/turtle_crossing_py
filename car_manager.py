@@ -30,3 +30,9 @@ class CarManager():
 
     def level_up(self):
         self.car_speed += MOVE_INCREMENT
+
+    def remove_cars_past_screen(self):
+        for index in range(0, len(self.all_cars) - 1):
+            if self.all_cars[index].xcor() <= -320:
+                self.all_cars.pop(index)
+
